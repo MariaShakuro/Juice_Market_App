@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="8.0" layoutY="7.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="200.0" prefWidth="300.0" styleClass="right_bar" stylesheets="@style.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="110.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="102.0" prefWidth="207.0" text="Juices Market" textAlignment="CENTER" textFill="#878787" textOverrun="CLIP">
+                           <font>
+                              <Font name="Cambria Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css">
+                     <VBox.margin>
+                        <Insets left="25.0" right="25.0" />
+                     </VBox.margin>
+                     <children>
+                        <TextField alignment="BOTTOM_LEFT" minWidth="170.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="170.0" promptText="Type here to search" styleClass="transparent" stylesheets="@style.css">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Cambria" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="63.0" styleClass="search-button" stylesheets="@style.css" text="Search" textFill="#fcf7f7">
+                           <font>
+                              <Font name="Candara Italic" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <styleClass>
+                        <String fx:value="search-box" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                  </HBox>
+                  <VBox prefHeight="370.0" prefWidth="100.0" styleClass="shoosen-juice-card" stylesheets="@style.css">
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                     <children>
+                        <HBox prefHeight="60.0" prefWidth="226.0">
+                           <children>
+                              <Label prefHeight="50.0" prefWidth="145.0" text="Orange">
+                                 <font>
+                                    <Font name="Cambria" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label alignment="CENTER" prefHeight="56.0" prefWidth="80.0" text="\$1.5">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="55.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <ImageView fitHeight="179.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true">
+                           <VBox.margin>
+                              <Insets left="40.0" />
+                           </VBox.margin>
+                           <image>
+                              <Image url="@../../../../../images/orange_juice.png" />
+                           </image>
+                        </ImageView>
+                        <HBox prefHeight="34.0" prefWidth="226.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="107.0" text="Kg">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <ComboBox prefHeight="34.0" prefWidth="120.0" promptText="1" styleClass="comboBox" stylesheets="@style.css" />
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="32.0" prefWidth="226.0" />
+                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="194.0" styleClass="add-btn" stylesheets="@style.css" text="Add to busket" textFill="#828282">
+                           <font>
+                              <Font name="Cambria Bold" size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="18.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </left>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </BorderPane>
+   </children>
+</AnchorPane>
