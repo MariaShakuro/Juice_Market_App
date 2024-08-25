@@ -5,17 +5,20 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MarketController">
    <children>
       <BorderPane layoutX="8.0" layoutY="7.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -56,14 +59,15 @@
                         <String fx:value="shadow" />
                      </styleClass>
                   </HBox>
-                  <VBox prefHeight="370.0" prefWidth="100.0" styleClass="shoosen-juice-card" stylesheets="@style.css">
+                  <Pane prefHeight="49.0" prefWidth="300.0" />
+                  <VBox fx:id="choosenJuiceCard" prefHeight="370.0" prefWidth="100.0" styleClass="shoosen-juice-card" stylesheets="@style.css">
                      <VBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </VBox.margin>
                      <children>
                         <HBox prefHeight="60.0" prefWidth="226.0">
                            <children>
-                              <Label prefHeight="50.0" prefWidth="145.0" text="Orange">
+                              <Label fx:id="JuiceNameLabel" prefHeight="50.0" prefWidth="145.0" text="Orange" textFill="#e7e0e0">
                                  <font>
                                     <Font name="Cambria" size="24.0" />
                                  </font>
@@ -71,32 +75,32 @@
                                     <Insets left="10.0" />
                                  </HBox.margin>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="56.0" prefWidth="80.0" text="\$1.5">
+                              <Label fx:id="JuicePriceLabel" alignment="CENTER" prefHeight="56.0" prefWidth="80.0" text="\$1.5" textFill="#ece8e8">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Label>
                            </children>
                            <VBox.margin>
-                              <Insets top="55.0" />
+                              <Insets bottom="10.0" top="55.0" />
                            </VBox.margin>
                         </HBox>
-                        <ImageView fitHeight="179.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="JuiceImg" fitHeight="146.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
                            <VBox.margin>
-                              <Insets left="40.0" />
+                              <Insets bottom="30.0" left="60.0" />
                            </VBox.margin>
                            <image>
-                              <Image url="@../../../../../images/orange_juice.png" />
+                              <Image url="@orange_juice.png" />
                            </image>
                         </ImageView>
                         <HBox prefHeight="34.0" prefWidth="226.0">
                            <children>
-                              <Label prefHeight="40.0" prefWidth="107.0" text="Kg">
+                              <Label prefHeight="40.0" prefWidth="107.0" text="Litr" textFill="#efeaea">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="5.0" />
+                                    <Insets left="10.0" />
                                  </HBox.margin>
                               </Label>
                               <ComboBox prefHeight="34.0" prefWidth="120.0" promptText="1" styleClass="comboBox" stylesheets="@style.css" />
@@ -119,6 +123,96 @@
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="65.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <Label alignment="CENTER_RIGHT" focusTraversable="false" prefHeight="66.0" prefWidth="92.0" text="language " textFill="#878787">
+                           <font>
+                              <Font name="Cambria" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label focusTraversable="false" prefHeight="66.0" prefWidth="116.0" text="English" textFill="#878787" underline="true">
+                           <font>
+                              <Font name="Cambria" size="16.0" />
+                           </font>
+                        </Label>
+                        <Pane prefHeight="66.0" prefWidth="154.0" HBox.hgrow="ALWAYS" />
+                        <Label alignment="CENTER" focusTraversable="false" prefHeight="66.0" prefWidth="124.0" text="My account" textFill="#878787">
+                           <font>
+                              <Font name="Cambria" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="60.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@Busket.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="506.0" styleClass="free_delivery_card" stylesheets="@style.css">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="100.0" prefWidth="178.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label focusTraversable="false" prefHeight="32.0" prefWidth="118.0" text="Free delivery" textFill="#878787">
+                                 <font>
+                                    <Font name="Cambria Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label focusTraversable="false" prefHeight="30.0" prefWidth="118.0" text="over $25 order" textFill="#878787">
+                                 <font>
+                                    <Font name="Cambria" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="100.0" prefWidth="179.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <VBox prefHeight="92.0" prefWidth="110.0">
+                                 <VBox.margin>
+                                    <Insets right="30.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <ImageView fitHeight="93.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                                       <image>
+                                          <Image url="@delivery.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="350.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ScrollPane fx:id="scroll" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="570.0" styleClass="transparent" stylesheets="@style.css" vbarPolicy="NEVER" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" top="10.0" />
+                           </HBox.margin>
+                           <content>
+                              <GridPane fx:id="grid">
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

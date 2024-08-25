@@ -27,3 +27,11 @@
 -fx-background-color:#FFFFFF;
   -fx-background-radius:100;
 }
+.free_delivery_card{
+-fx-background-color:#D3D3D3;
+-fx-background-radius:30;
+}
+.fruit_item{
+-fx-background-color:#FFFFFF;
+  -fx-background-radius:30;
+}
