@@ -4,18 +4,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import main.Main;
 import main.MyListener;
 import model.Juice;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -33,6 +35,9 @@ public class MarketController implements Initializable {
     @FXML
     private Label JuicePriceLabel;
 
+   // @FXML
+  //  private Button searchButton;
+
     @FXML
     private VBox choosenJuiceCard;
 
@@ -42,7 +47,95 @@ public class MarketController implements Initializable {
     @FXML
     private ScrollPane scroll;
 
-     private List<Juice> juices=new ArrayList<>();
+   // @FXML
+  //  private ImageView avatar;
+
+   // @FXML
+   // private TextField searchField;
+
+   /* //Для поиска по названию
+    @FXML
+    public void initialize() {
+        searchButton.setOnAction(event -> performSearch());
+    }
+
+    private void performSearch() {
+        String searchText = searchField.getText().toLowerCase(); // Предполагаем, что searchField это TextField
+        GridPane content = new GridPane(); // Создаем новый GridPane для содержимого
+
+        // Пример данных для поиска
+        List<Juice> juices = getData();
+
+        int row = 0; // Переменная для отслеживания текущей строки в GridPane
+        for (Juice juice : juices) {
+            if (juice.getName().toLowerCase().contains(searchText)) {
+                Label itemLabel = new Label(juice.getName());
+                itemLabel.setOnMouseClicked(event -> displayJuiceDetails(juice));
+                content.add(itemLabel, 0, row++); // Добавляем элемент в GridPane в новую строку
+            }
+        }
+        grid.getChildren().clear(); // Очищаем GridPane перед добавлением новых результатов
+        grid.add(content, 0, 0); // Устанавливаем содержимое GridPane
+    }
+
+    private void displayJuiceDetails(Juice juice) {
+        JuiceNameLabel.setText(juice.getName());
+        JuicePriceLabel.setText("Price: $" + juice.getPrice());
+        JuiceImg.setImage(new Image(getClass().getResourceAsStream(juice.getImgScr())));
+
+        choosenJuiceCard.getChildren().clear();
+        choosenJuiceCard.getChildren().addAll(JuiceImg, JuiceNameLabel, JuicePriceLabel);
+    }*/
+
+       /* // Пример данных для поиска
+        String[] items = {"Beetroot juice", "Apple juice", "Carrot juice", "Cranberry juice", "Grape juice",
+        "Grapefruit juice","Orange juice","Pineapple juice","Tomato juice","Watermelon juice"};
+
+        for (String item : items) {
+            if (item.toLowerCase().contains(searchText)) {
+                content.getChildren().add(new Label(item));
+            }
+        }
+
+        scroll.setContent(content); // Устанавливаем содержимое ScrollPane
+    }*/
+
+    @FXML
+    void clickAvatar(MouseEvent event) {
+        try {
+            // Загружаем новую сцену из FXML файла
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/Avatar.fxml"));
+            Scene scene = new Scene(loader.load(), 800, 600);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Second");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    void busketAvatar(MouseEvent event) {
+        try {
+            // Загружаем новую сцену из FXML файла
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/main/busket.fxml"));
+            Scene scene = new Scene(loader.load(), 800, 600);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Third");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    public void initialize() {
+
+    }
+
+    private List<Juice> juices=new ArrayList<>();
      private Image image;
     private MyListener myListener;
     private List<Juice>getData(){
@@ -186,5 +279,7 @@ public class MarketController implements Initializable {
         scroll.setFitToWidth(true);
         scroll.setFitToHeight(true);
     }
+
 }
+
 

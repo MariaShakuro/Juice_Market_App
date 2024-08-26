@@ -40,7 +40,7 @@
                         <Insets left="25.0" right="25.0" />
                      </VBox.margin>
                      <children>
-                        <TextField alignment="BOTTOM_LEFT" minWidth="170.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="170.0" promptText="Type here to search" styleClass="transparent" stylesheets="@style.css">
+                        <TextField fx:id="searchField" alignment="BOTTOM_LEFT" minWidth="170.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="32.0" prefWidth="170.0" promptText="Type here to search" styleClass="transparent" stylesheets="@style.css">
                            <HBox.margin>
                               <Insets left="15.0" />
                            </HBox.margin>
@@ -48,7 +48,7 @@
                               <Font name="Cambria" size="14.0" />
                            </font>
                         </TextField>
-                        <Button mnemonicParsing="false" prefHeight="42.0" prefWidth="63.0" styleClass="search-button" stylesheets="@style.css" text="Search" textFill="#fcf7f7">
+                        <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="42.0" prefWidth="63.0" styleClass="search-button" stylesheets="@style.css" text="Search" textFill="#fcf7f7">
                            <font>
                               <Font name="Candara Italic" size="12.0" />
                            </font>
@@ -107,7 +107,7 @@
                            </children>
                         </HBox>
                         <VBox prefHeight="32.0" prefWidth="226.0" />
-                        <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="194.0" styleClass="add-btn" stylesheets="@style.css" text="Add to busket" textFill="#828282">
+                        <Button fx:id="addButton" mnemonicParsing="false" prefHeight="28.0" prefWidth="194.0" styleClass="add-btn" stylesheets="@style.css" text="Add to busket" textFill="#828282">
                            <font>
                               <Font name="Cambria Bold" size="16.0" />
                            </font>
@@ -131,7 +131,7 @@
                         <Insets />
                      </VBox.margin>
                      <children>
-                        <Label alignment="CENTER_RIGHT" focusTraversable="false" prefHeight="66.0" prefWidth="92.0" text="language " textFill="#878787">
+                        <Label alignment="CENTER_RIGHT" focusTraversable="false" prefHeight="66.0" prefWidth="92.0" text="Language " textFill="#878787">
                            <font>
                               <Font name="Cambria" size="16.0" />
                            </font>
@@ -141,18 +141,24 @@
                               <Font name="Cambria" size="16.0" />
                            </font>
                         </Label>
-                        <Pane prefHeight="66.0" prefWidth="154.0" HBox.hgrow="ALWAYS" />
-                        <Label alignment="CENTER" focusTraversable="false" prefHeight="66.0" prefWidth="124.0" text="My account" textFill="#878787">
-                           <font>
-                              <Font name="Cambria" size="18.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="60.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                        <Pane prefHeight="66.0" prefWidth="158.0" HBox.hgrow="ALWAYS">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></Pane>
+                        <ImageView fx:id="busket" fitHeight="60.0" fitWidth="171.0" onMousePressed="#busketAvatar" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Busket.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="avatar" fitHeight="60.0" fitWidth="125.0" onMousePressed="#clickAvatar" pickOnBounds="true" preserveRatio="true">
                            <HBox.margin>
                               <Insets top="5.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@Busket.png" />
+                              <Image url="@avatar.png" />
                            </image>
                         </ImageView>
                      </children>
