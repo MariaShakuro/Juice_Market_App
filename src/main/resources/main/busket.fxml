@@ -56,5 +56,6 @@
             </ScrollPane>
          </children>
       </HBox>
+      <Button layoutX="383.0" layoutY="344.0" mnemonicParsing="false" onMousePressed="#buybtn" prefHeight="25.0" prefWidth="166.0" styleClass="bnt_radius" stylesheets="@style.css" text="Buy" />
    </children>
 </AnchorPane>

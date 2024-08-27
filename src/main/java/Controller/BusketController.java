@@ -16,6 +16,19 @@ public class BusketController {
     private FXMLLoader fxmlLoader ;
 
     @FXML
+    void buybtn(MouseEvent event) throws IOException {
+        // Загружаем новую сцену из FXML файла
+        try{
+         fxmlLoader = new FXMLLoader(getClass().getResource("/main/pay.fxml"));
+         scene = new Scene(fxmlLoader.load(), 800, 600);
+         stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Pay");
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }}
+    @FXML
     void exit(MouseEvent event) throws IOException {
         fxmlLoader = new FXMLLoader(getClass().getResource("/main/market.fxml"));
         stage=(Stage)((Node)event.getSource()).getScene().getWindow();
@@ -23,4 +36,6 @@ public class BusketController {
         stage.setScene(scene);
         stage.hide();
     }
-}
+
+    }
+
